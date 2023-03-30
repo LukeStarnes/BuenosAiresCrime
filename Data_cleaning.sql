@@ -1,3 +1,12 @@
+--Inspected excel files and sorted data into the folllowing columns
+--ID | Year | Month | Day | Date | Hour | Type | Subtype | Neighbourhood | Commune | Lat | Long
+-- Where data IS missing Year / Month / Day, extract this from date into respective columns
+-- =TEXT(E2,"yyyy")
+-- =TEXT(E2,"mmmm")
+-- =TEXT(E2,"dddd")
+-- Fix Long and Latitude by adding “.” at position 4
+-- =REPLACE(K168,4,0,".")
+
 --Create SQL Tables and Import data for each year
 
 CREATE TABLE data_2021
