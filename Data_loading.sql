@@ -1,12 +1,3 @@
---Inspected excel files and sorted data into the folllowing columns
---ID | Year | Month | Day | Date | Hour | Type | Subtype | Neighbourhood | Commune | Lat | Long
--- Where data IS missing Year / Month / Day, extract this from date into respective columns
--- =TEXT(E2,"yyyy")
--- =TEXT(E2,"mmmm")
--- =TEXT(E2,"dddd")
--- Fix Long and Latitude by adding “.” at position 4
--- =REPLACE(K168,4,0,".")
-
 --Create SQL Tables and Import data for each year
 
 CREATE TABLE data_2021
@@ -122,3 +113,30 @@ CREATE TABLE data_2016
 
 ALTER TABLE IF EXISTS data_2016
     OWNER to postgres;
+
+--Import data and union tables into one
+
+CREATE table crime_data as
+Select *
+from data_2016
+union all
+Select *
+from data_2017
+union all
+Select *
+from data_2018
+union all
+Select *
+from data_2019
+union all
+Select *
+from data_2020
+union all
+Select *
+from data_2021
+
+--Check data imported ok
+select crime_year, count(*) as incidents
+from crime_data
+group by crime_year
+order by crime_year
