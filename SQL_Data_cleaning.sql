@@ -183,3 +183,7 @@ VALUES ('RH-2021-1002368', '2021', 'December', 'Tuesday', '28/12/2021', '12', 'T
 
 -- Change data type for hour_of_day and commune to integer
 ALTER TABLE crime_data ALTER COLUMN hour_of_day  TYPE integer USING (hour_of_day::integer);
+
+
+-- EXPORT AS cleaned_data
+
