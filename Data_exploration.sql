@@ -7,7 +7,6 @@ coalesce(Homicide,0) AS Homicide
 FROM crosstab
 ('select neighbourhood, crime_type, count(1) 
 from crime_data
-JOIN ON
 WHERE neighbourhood IS NOT NULL 
 group by neighbourhood, crime_type
 order by neighbourhood, crime_type',
