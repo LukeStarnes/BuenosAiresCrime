@@ -1,4 +1,4 @@
---Inspected excel files and sorted data into the folllowing columns
+--Inspected excel files and sorted data into the following columns
 --ID | Year | Month | Day | Date | Hour | Type | Subtype | Neighbourhood | Commune | Lat | Long
 -- Where data IS missing Year / Month / Day, extract this from date into respective columns
 -- =TEXT(E2,"yyyy")
